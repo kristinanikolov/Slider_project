@@ -1,0 +1,219 @@
+@import 'variables';
+@import 'mixins';
+
+.slider-wrapper {
+  display: flex;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+}
+
+.slider-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 20px;
+  width: $slider-width;
+  margin-right: auto;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slides-row {
+  display: flex;
+  @include transition(transform, 0.1s);
+  margin-bottom: 10px;
+  position: relative;
+  margin-right: auto;
+  height: 200px;
+}
+
+.slide {
+  position: right;
+  flex-shrink: 0;
+  margin-right: 10px;
+  height: 200px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+}
+
+.slides-row.top-row {
+  max-width: 1230px;
+  margin-left: auto;
+  justify-content: flex-end;
+  left: -120px;
+}
+
+.slides-row.bottom-row {
+  max-width: 1030px;
+  margin-left: auto;
+  justify-content: flex-end;
+  left: -130px;
+}
+
+.slider-controls {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 1035px;
+  top: 205px;
+
+  button {
+    color: $primary-color;
+    width: $button-size;
+    height: $button-size;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: border-color 0.1s ease;
+    margin: 5px;
+
+    &:active {
+      border-color: $secondary-color;
+    }
+
+    .arrow-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block; 
+      }
+    }
+  }
+
+  button.next, button.prev {
+    border-color: $primary-color;
+    border-width: 2px;
+  }
+
+  button.active-next, button.active-prev {
+    border-color: $secondary-color;
+    border-width: 2px;
+  }
+
+  .prev .arrow-container img.normal {
+    display: block;
+  }
+
+  .prev .arrow-container img.active {
+    display: none;
+  }
+
+  .next .arrow-container img.normal {
+    display: block;
+  }
+
+  .next .arrow-container img.active {
+    display: none;
+  }
+}
+
+button.prev.active-prev .arrow-container img.normal {
+  display: none;
+}
+
+button.prev.active-prev .arrow-container img.active {
+  display: block;
+}
+
+button.next.active-next .arrow-container img.normal {
+  display: none;
+}
+
+button.next.active-next .arrow-container img.active {
+  display: block;
+}
+
+
+.slide-stones {
+  width: 260px;
+}
+
+.slide-nature {
+  width: 120px;
+}
+
+.slide-sunset {
+  width: 180px;
+}
+
+.slide-beach {
+  width: 220px;
+}
+
+.slide-surfer {
+  width: 260px;
+}
+
+.slide-girl {
+  width: 120px;
+}
+
+.slide-ocean {
+  width: 180px;
+}
+
+.slide-sea {
+  width: 180px;
+}
+
+.slide-dolphins {
+  width: 242px;
+}
+
+.slider-text {
+  width: 301px;
+  height: 296px;
+  position: absolute;
+  left: 1100px;
+  top: 0;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h2 {
+    font-family: $font-family;
+    font-weight: 700;
+    width: 300.93px;
+    height: 120px;
+    color: $primary-color;
+    font-size: 32px;
+    margin-bottom: 30px;
+    line-height: 37.5px;
+  }
+
+  p {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: $text-color;
+    width: 300.93px;
+    height: 156px;
+    top: 140px;
+  }
+}
